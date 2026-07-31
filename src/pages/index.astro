@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import me from '../assets/me.png';
 ---
 
 <!doctype html>
@@ -13,6 +15,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
+			<figure class="hero-photo">
+				<Image src={me} alt="甜源创新" widths={[300, 460]} sizes="(max-width: 480px) 80vw, 320px" />
+			</figure>
+
 			<h1>👋 这里是甜源创新的自留地</h1>
 			<p>
 				我喜欢折腾网络和系统。把一台巴掌大的 OpenWRT 路由器塞满远程访问的花样、给自己搭
@@ -37,5 +43,18 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			</p>
 		</main>
 		<Footer />
+		<style>
+			.hero-photo {
+				margin: 0 0 1.5rem;
+				text-align: center;
+			}
+			.hero-photo img {
+				width: 320px;
+				max-width: 80%;
+				height: auto;
+				border-radius: 16px;
+				box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+			}
+		</style>
 	</body>
 </html>
