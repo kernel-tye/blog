@@ -3,9 +3,8 @@ backend:
   name: github
   repo: kernel-tye/blog
   branch: main
-  # OAuth 中转地址：部署 sveltia-cms-auth 到 Cloudflare Worker 后，
-  # 把下面这行换成 worker 的地址（不带结尾斜杠），例如 https://xxx.workers.dev
-  base_url: https://REPLACE-WITH-YOUR-AUTH-WORKER.workers.dev
+  # OAuth 中转：自建在 VPS 上（Python relay + nginx），见 blog 仓库外的部署说明
+  base_url: https://cms-auth.tyinno.com
 
 # 媒体（正文里插入的图片）上传到 public/uploads，站点以 /uploads 访问
 media_folder: public/uploads
