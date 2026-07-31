@@ -6,42 +6,34 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<h1>👋 这里是甜源创新的自留地</h1>
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
+				我喜欢折腾网络和系统。把一台巴掌大的 OpenWRT 路由器塞满远程访问的花样、给自己搭
+				Tailscale 的 DERP 中继、用 WireGuard 给设备修好几条「回家的路」、在 VPS 上自建各种服务——
+				甚至路由器的 flash 都是自己焊上去的。凡是「能自己掌控，就不假手于人」的东西，我大概都想试试。
 			</p>
 			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
+				这个博客就是折腾过程里的笔记本：记那些踩过的坑、想明白的原理，以及「原来还能这么干」的小得意。
+				内容大多围绕：
 			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
 			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+				<li><strong>自建与远程访问</strong>：OpenWRT、Tailscale、WireGuard、Cloudflare Tunnel</li>
+				<li><strong>网络与系统</strong>：代理、隧道、NAT 穿透、可观测性、无人值守的自愈</li>
+				<li><strong>动手玩硬件</strong>：路由器、单板机、以及一切可以拆开看看的东西</li>
 			</ul>
 			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+				信奉「多一条独立的路，就多一分安心」——无论是网络的冗余，还是把内容、服务、编辑器解耦。
+				写给自己看，也顺手分享给同样爱折腾的你。
 			</p>
 			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+				→ 去翻 <a href="/blog">所有文章</a> ·  订阅 <a href="/rss.xml">RSS</a>
 			</p>
 		</main>
 		<Footer />
