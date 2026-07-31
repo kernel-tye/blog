@@ -1,0 +1,36 @@
+# Sveltia CMS 配置
+backend:
+  name: github
+  repo: kernel-tye/blog
+  branch: main
+  # OAuth 中转地址：部署 sveltia-cms-auth 到 Cloudflare Worker 后，
+  # 把下面这行换成 worker 的地址（不带结尾斜杠），例如 https://xxx.workers.dev
+  base_url: https://REPLACE-WITH-YOUR-AUTH-WORKER.workers.dev
+
+# 媒体（正文里插入的图片）上传到 public/uploads，站点以 /uploads 访问
+media_folder: public/uploads
+public_folder: /uploads
+
+# 站点显示名
+site_url: https://blog.tyinno.com
+display_url: https://blog.tyinno.com
+logo_url: https://blog.tyinno.com/favicon.svg
+
+collections:
+  - name: blog
+    label: 博客文章
+    label_singular: 文章
+    description: 管理 blog.tyinno.com 的文章
+    folder: src/content/blog
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    preview_path: 'blog/{{slug}}'
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 摘要, name: description, widget: text }
+      - { label: 发布日期, name: pubDate, widget: datetime, format: 'MMM dd yyyy', date_format: 'MMM dd yyyy', time_format: false }
+      - { label: 更新日期, name: updatedDate, widget: datetime, required: false, format: 'MMM dd yyyy', date_format: 'MMM dd yyyy', time_format: false }
+      - { label: 正文, name: body, widget: markdown }
