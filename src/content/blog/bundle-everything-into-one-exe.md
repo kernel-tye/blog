@@ -215,7 +215,15 @@ Filename: "netsh.exe"; RunOnceId: "RemoveFirewallRules"; \
 
 ## 结果
 
-原始 1005 MB，压缩后的安装包见文末。用的是 `Compression=lzma2/max` 加 `SolidCompression=yes`，代价是压缩过程要几分钟，值得。
+```
+原始素材    1005 MB
+安装包       272 MB      压缩率 27%
+压缩耗时    5 分 36 秒
+```
+
+用的是 `Compression=lzma2/max` 加 `SolidCompression=yes`。后者是"固实压缩"——把所有文件当成一个连续数据流压，跨文件的重复能被利用到。Chromium 和 Python 里有大量相似的二进制片段，这个开关值不少。
+
+代价是压缩过程慢（这次五分半），而且安装时不能只解压其中一个文件——但安装本来就是全量的，无所谓。
 
 装完的结构：
 
