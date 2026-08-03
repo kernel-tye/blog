@@ -167,7 +167,7 @@ winget install JRSoftware.InnoSetup
 
 顺带一提，**这个值定下来就不要改**。它是安装器识别"同一个程序"的依据，改了之后新版本会被当成另一个软件，旧的卸不掉，两个条目并存。
 
-**`{userappdata}` 不是用户目录。** 它指向 `C:\Users\你\AppData\Roaming`，我写了 `{userappdata}\..\.tycode` 想上一级，结果上到了 `AppData`，文件会装到 `C:\Users\你\AppData\.tycode`。要用 `{%USERPROFILE}\.tycode`。
+**`{userappdata}` 不是用户目录。** 它指向 `C:\Users\你\AppData\Roaming`，我写了 `{userappdata}...xxx` 想上一级，结果上到了 `AppData`，文件会装到 `C:\Users\你\AppData\.tycode`。要用 `{%USERPROFILE}.xxx`。
 
 ### 卸载时要清的，不在安装目录里
 
@@ -193,7 +193,7 @@ Filename: "netsh.exe"; RunOnceId: "RemoveFirewallRules"; \
 
 ### 用户数据要留下
 
-`~/.tycode` 里有配置、凭据、会话历史和用户自己改过的脚本。删掉是不可逆的，重装还要重新配。所以默认保留，只在卸载时弹一次询问，**默认按钮是"否"**。
+`~/.xxx` 里有配置、凭据、会话历史和用户自己改过的脚本。删掉是不可逆的，重装还要重新配。所以默认保留，只在卸载时弹一次询问，**默认按钮是"否"**。
 
 程序装在 `Program Files`，用户数据在用户目录——这条边界也决定了哪些跟着卸载走、哪些留下。
 
