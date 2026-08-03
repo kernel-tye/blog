@@ -167,7 +167,7 @@ winget install JRSoftware.InnoSetup
 
 顺带一提，**这个值定下来就不要改**。它是安装器识别"同一个程序"的依据，改了之后新版本会被当成另一个软件，旧的卸不掉，两个条目并存。
 
-**`{userappdata}` 不是用户目录。** 它指向 `C:\Users\你\AppData\Roaming`，我写了 `{userappdata}...xxx` 想上一级，结果上到了 `AppData`，文件会装到 `C:\Users\你\AppData\.tycode`。要用 `{%USERPROFILE}.xxx`。
+**`{userappdata}` 不是用户目录。** 它指向 `C:\Users\你\AppData\Roaming`，我写了 `{userappdata}\..\.xxx` 想上一级，结果上到了 `AppData`，文件会装到 `C:\Users\你\AppData\.xxx`。要用 `{%USERPROFILE}\.xxx`。
 
 ### 卸载时要清的，不在安装目录里
 
